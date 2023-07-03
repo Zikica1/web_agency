@@ -6,21 +6,87 @@ header {
   top: 0;
   left: 0;
   box-shadow: 0 4px 44px 0 rgba(0, 0, 0, 0.14);
+  transition: 0.6s ease;
+}
+
+header.sticky {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
 }
 
 .header-container {
   position: relative;
-  max-width: 1200px;
+  max-width: 75em;
   height: calc(4em + 1em);
   margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.5em 1em;
+  transition: 0.6s ease;
+}
+
+header.sticky .header-container {
+  height: calc(3em + 1em);
 }
 
 nav {
-  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-transparent-1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+nav.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav-body {
+  position: relative;
+  width: 37.5em;
+  max-width: 37.5em;
+  border-radius: 10px;
+  margin-inline: auto;
+  background-color: $color-modal-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0px 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 2.5em;
+  margin: 1.25em;
+  transform: translateY(-50px);
+  transition: transform 0.3s ease;
+}
+
+nav.active .nav-body {
+  transform: translateY(0);
+}
+
+.nav-body ul a {
+  display: inline-block;
+  color: $color-text;
+  font-size: 1rem;
+  font-family: 'quicksand', sans-serif;
+  font-weight: 600;
+  margin: 15px 50px;
+}
+
+.nav-body li.active a {
+  color: $color-primary;
+}
+
+.nav-body ul a:hover {
+  color: $color-primary;
 }
 
 .header-container .btn-primary {
@@ -30,7 +96,7 @@ nav {
 /* hamburger */
 .hamburger {
   position: relative;
-  z-index: 10;
+  z-index: 110;
   width: 24px;
   height: 24px;
   background: none;
@@ -45,7 +111,7 @@ nav {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #000;
+  background-color: #333;
   transform: rotate(0);
   transition: all 0.5s;
 }
