@@ -574,6 +574,10 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"1SICI":[function(require,module,exports) {
+const btnHam = document.querySelector(".hamburger");
+btnHam.addEventListener("click", ()=>{
+    btnHam.classList.toggle("open");
+});
 
 },{}]},["gEwwu","1SICI"], "1SICI", "parcelRequire6975")
 

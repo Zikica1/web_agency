@@ -1,0 +1,71 @@
+@use '../abstracts/colors' as *;
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 44px 0 rgba(0, 0, 0, 0.14);
+}
+
+.header-container {
+  position: relative;
+  max-width: 1200px;
+  height: calc(4em + 1em);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em 1em;
+}
+
+nav {
+  display: none;
+}
+
+.header-container .btn-primary {
+  display: none;
+}
+
+/* hamburger */
+.hamburger {
+  position: relative;
+  z-index: 10;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.hamburger :is(.top, .middle, .bottom) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger .middle {
+  transform: translateY(7px);
+}
+
+.hamburger .bottom {
+  transform: translateY(14px);
+}
+
+.open .top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .middle {
+  display: none;
+}
+
+.open .bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
