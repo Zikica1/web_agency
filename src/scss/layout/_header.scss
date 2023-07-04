@@ -1,4 +1,6 @@
 @use '../abstracts/colors' as *;
+@use '../abstracts/mixin' as *;
+@use '../components/buttons' as *;
 
 header {
   position: fixed;
@@ -13,16 +15,55 @@ header.sticky {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
 }
 
+header .contact {
+  position: relative;
+  z-index: 1;
+  color: $color-text-2;
+  background-color: $color-header-con;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3125em 2.1875em;
+}
+
+header .contact :is(.phone-number, .social-icons) {
+  display: flex;
+  align-items: center;
+}
+
+header .phone-number img {
+  margin-right: 0.62em;
+}
+
+header .social-icons img {
+  width: 1.062em;
+  height: 1.062em;
+  margin-right: 1em;
+}
+
+header .social-icons img:last-child {
+  margin-right: 0;
+}
+
 .header-container {
   position: relative;
   max-width: 75em;
-  height: calc(4em + 1em);
+  min-height: calc(4em + 1em);
   margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5em 1em;
+  padding: 1em 2.1875em;
   transition: 0.6s ease;
+
+  @include sizeMd {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include sizeLg {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 header.sticky .header-container {
@@ -36,13 +77,22 @@ nav {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: $color-transparent-1;
+  background-color: $color-modal-bg;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   visibility: hidden;
   transition: 0.3s ease;
+
+  @include sizeMd {
+    position: unset;
+    width: unset;
+    height: auto;
+    background-color: unset;
+    opacity: unset;
+    visibility: unset;
+  }
 }
 
 nav.active {
@@ -66,10 +116,43 @@ nav.active {
   margin: 1.25em;
   transform: translateY(-50px);
   transition: transform 0.3s ease;
+
+  @include sizeMd {
+    width: unset;
+    max-width: unset;
+    border-radius: unset;
+    background-color: unset;
+    box-shadow: unset;
+    padding: 0;
+    margin: 0;
+    transform: translateY(0);
+  }
 }
 
 nav.active .nav-body {
   transform: translateY(0);
+}
+
+.nav-body .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.625em;
+  width: 1.875em;
+  height: 1.875em;
+  background: url(../img/close-menu.png) no-repeat center center;
+  background-size: 1.25em;
+  cursor: pointer;
+
+  @include sizeMd {
+    display: none;
+  }
+}
+
+.nav-body ul {
+  @include sizeMd {
+    display: flex;
+  }
 }
 
 .nav-body ul a {
@@ -78,7 +161,19 @@ nav.active .nav-body {
   font-size: 1rem;
   font-family: 'quicksand', sans-serif;
   font-weight: 600;
-  margin: 15px 50px;
+  margin: 0.94em 3.125em;
+
+  @include sizeMd {
+    margin: 1.5em 0 0;
+    padding: 0.5em 1.4em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+
+  @include sizeLg {
+    margin-top: 0;
+  }
 }
 
 .nav-body li.active a {
@@ -89,20 +184,28 @@ nav.active .nav-body {
   color: $color-primary;
 }
 
-.header-container .btn-primary {
+header .btn-primary {
   display: none;
+
+  @include sizeLg {
+    display: block;
+  }
 }
 
 /* hamburger */
 .hamburger {
   position: relative;
-  z-index: 110;
-  width: 24px;
-  height: 24px;
+  z-index: 10;
+  width: 1.5em;
+  height: 1.5em;
   background: none;
   border: none;
   cursor: pointer;
-  transition: 0.25s ease;
+  transition: 0.2s ease;
+
+  @include sizeMd {
+    display: none;
+  }
 }
 
 .hamburger :is(.top, .middle, .bottom) {
@@ -113,7 +216,7 @@ nav.active .nav-body {
   height: 2px;
   background-color: #333;
   transform: rotate(0);
-  transition: all 0.5s;
+  transition: all 0.4s;
 }
 
 .hamburger .middle {

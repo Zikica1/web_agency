@@ -1,1 +1,58 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixin' as *;
 
+/* primary-btn */
+.btn-primary {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  border: none;
+  border-radius: 100em;
+  background: linear-gradient(269deg, $color-primary 0%, $color-tertial 100%);
+  box-shadow: 6px 6px 25px 0 rgba(0, 217, 166, 0.35);
+  line-height: 100%;
+  padding: 1.125em 2.812em;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.45s all;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.btn-overlay {
+  position: absolute;
+  width: 120%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0, 0);
+  transition: transform 0.45s ease-out;
+}
+
+.btn-overlay::after {
+  display: block;
+  position: relative;
+  content: '';
+  border-radius: 50%;
+  padding-top: 100%;
+  background-color: $color-button-bg;
+  transition: transform 0.45s ease-out;
+}
+
+.btn-text {
+  color: $color-text-2;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  font-size: 0.8125rem;
+  line-height: 1.3em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover .btn-overlay {
+  transform: translate(-50%, -50%) scale(1, 1);
+}
+
+.btn-primary:hover .btn-text {
+  color: #fff;
+}

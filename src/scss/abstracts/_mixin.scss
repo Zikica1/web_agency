@@ -1,0 +1,14 @@
+$middleSize: 48rem;
+$largeSize: 64rem;
+
+@mixin sizeMd {
+  @media (min-width: #{$middleSize}) {
+    @content;
+  }
+}
+
+@mixin sizeLg {
+  @media (min-width: #{$largeSize}) {
+    @content;
+  }
+}
