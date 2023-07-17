@@ -1,0 +1,479 @@
+@use '../abstracts' as *;
+
+/* hero section */
+.hero {
+  width: 100%;
+  height: 105vh;
+  margin-top: 10em;
+  background: $color-body-bg;
+  overflow: hidden;
+
+  @include sizeMd {
+    padding: 3.125em 0 0 6.25em;
+    height: 100vh;
+  }
+
+  @include sizeLg {
+    height: 90vh;
+  }
+}
+
+.hero .content {
+  display: none;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-out;
+}
+
+.hero .content.active {
+  display: block;
+}
+
+.hero .container {
+  @include sizeSm {
+    padding-inline: 6.25em;
+  }
+
+  @include sizeMd {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 0;
+  }
+}
+
+.hero-left-col h3 {
+  color: $color-primary;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 1.1;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: moveToRight 3s ease forwards;
+}
+
+.hero-left-col h1 {
+  color: $color-text-3;
+  font-size: $fs-middle-tl;
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.17em;
+  margin-block: 0.17em 0.355em;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  animation: moveToTop 2.2s 0.5s ease forwards;
+
+  @include sizeLg {
+    font-size: $fs-large-tl;
+    line-height: 1.1;
+  }
+}
+
+.hero-left-col h1 span {
+  color: $color-primary;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  animation: moveToTop 2.2s 2.1s ease forwards;
+}
+
+.hero-left-col .hero-img-lef {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: moveToLeft 3s 0.5s ease forwards;
+}
+
+.hero-left-col p {
+  color: $color-text;
+  font-size: $fs-small;
+  font-family: 'Ubuntu', sans-serif;
+  margin-block: 1.142em;
+  opacity: 0;
+  animation: showItem 2.5s 0.5s linear forwards;
+
+  @include sizeLg {
+    font-size: $fs-middle;
+  }
+}
+
+.hero-right-col-inner {
+  position: relative;
+  width: 95%;
+  height: 400px;
+  right: -17vw;
+  margin-top: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include sizeSm {
+    right: 0;
+    width: 100%;
+  }
+
+  @include sizeMd {
+    right: -10vw;
+  }
+}
+
+.hero-right-col .hero-shape-1 {
+  background-color: $color-hero-img;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.6);
+  transform-origin: right center;
+
+  @include sizeSm {
+    width: 90%;
+  }
+
+  @include sizeMd {
+    width: 100%;
+  }
+}
+
+.hero-right-col .hero-shape-img {
+  position: absolute;
+  z-index: 20;
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.16);
+  right: 10%;
+  top: 9%;
+  transform-origin: right center;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.6);
+
+  @include sizeSm {
+    width: 70%;
+  }
+
+  @include sizeMd {
+    width: 79%;
+  }
+
+  @include sizeLg {
+    top: 14%;
+    right: 12%;
+  }
+}
+
+.hero-right-col
+  :is(.hero-shape-li-1, .hero-shape-li-2, .hero-shape-li-3, .hero-shape-li-4) {
+  position: absolute;
+}
+
+.hero-shape-li-1 {
+  width: 40%;
+  height: 2.625em;
+  background-color: $color-hero-img;
+  border-radius: 30px;
+  opacity: 0;
+  right: 58vw;
+  top: 2.625em;
+  transform-origin: right center;
+
+  @include sizeSm {
+    right: 40vw;
+    width: 35%;
+  }
+
+  @include sizeMd {
+    right: 32vw;
+    height: calc(2.625em);
+  }
+}
+
+.hero-shape-li-2 {
+  z-index: 11;
+  width: 20%;
+  height: 2.625em;
+  background-color: $color-body-bg;
+  border-radius: 30px;
+  top: 5.1875em;
+  right: 69vw;
+  opacity: 0;
+  transform-origin: left center;
+
+  @include sizeSm {
+    right: 44vw;
+    left: 1vw;
+  }
+
+  @include sizeMd {
+    left: -2vw;
+  }
+}
+
+.hero-shape-li-3 {
+  width: 34%;
+  height: 2.625em;
+  background-color: $color-hero-img;
+  border-radius: 30px;
+  top: calc(7.625em + 3px);
+  right: 60vw;
+  opacity: 0;
+  transform-origin: right center;
+
+  @include sizeSm {
+    right: 41vw;
+  }
+
+  @include sizeMd {
+    right: 32vw;
+  }
+
+  @include sizeLg {
+    right: 31vw;
+  }
+}
+
+.hero-shape-li-4 {
+  width: 20%;
+  height: 2.625em;
+  background-color: $color-hero-img;
+  border-radius: 30px;
+  top: 2.8125em;
+  left: -34vw;
+  opacity: 0;
+  transform-origin: left center;
+
+  @include sizeSm {
+    left: -15vw;
+    width: 15%;
+  }
+}
+
+.hero-shape-img img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.hero-shape-1.animate {
+  animation: showShape1 1.5s ease forwards;
+}
+
+.hero-shape-img.animate {
+  animation: showShape1 1.5s 0.3s ease forwards;
+}
+
+.hero-shape-li-1.animate {
+  animation: fadeIn 1.5s 1s linear forwards, stretchOut 2s 1.5s ease-in-out;
+}
+
+.hero-shape-li-2.animate {
+  animation: fadeIn 1.5s 1s linear forwards, stretchOut-2 2s 2s ease-in;
+}
+
+.hero-shape-li-3.animate {
+  animation: fadeIn 1.5s 1.1s linear forwards, stretchOut-3 2s 1.9s ease-in;
+}
+
+.hero-shape-li-4.animate {
+  animation: fadeIn 1s 1.1s linear forwards, stretchOut-3 2s 1.7s ease;
+}
+
+/* Slider */
+.slider-navigation {
+  position: absolute;
+  width: 2em;
+  height: 20%;
+  right: 0;
+  top: 40%;
+  background-color: $color-primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: showItem 3s 0.5s ease-out forwards;
+
+  @include sizeMd {
+    left: 0;
+    top: 35%;
+  }
+}
+
+.slider-navigation.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slider-navigation .nav-btn {
+  width: 0.75em;
+  height: 0.75em;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid $color-body-bg;
+  transition: 0.3s ease;
+}
+
+.slider-navigation .nav-btn.active {
+  background: $color-body-bg;
+}
+
+.slider-navigation .nav-btn:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.slider-navigation .nav-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Services */
+.services {
+  margin-block: 3.125em;
+  padding-block: 3.125em;
+
+  @include sizeSm {
+    padding-inline: 6.25em;
+  }
+}
+
+.services-left-col {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.services-left-col h3 {
+  color: $color-text-3;
+  font-family: 'Quicksand', sans-serif;
+  font-size: $fs-small-tl;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.75em;
+}
+
+.services-left-col h3 span {
+  color: $color-primary;
+}
+
+.services-left-col .divider {
+  margin: 0.5em 0 2.5em;
+}
+
+.services-left-col .btn-primary {
+  padding: 0.71em 2.14em;
+}
+
+.services-right-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 3.125em;
+}
+.service-card {
+  padding: 3.125em;
+  box-shadow: 0 3px 35px 0 rgba(0, 0, 0, 0.14);
+  margin-bottom: 3.125em;
+  border-bottom: 3px solid $color-primary;
+  border-radius: 6px;
+}
+
+.service-card:nth-of-type(4) {
+  margin-bottom: 0;
+}
+
+.service-card img {
+  width: 4.56em;
+  height: 4.44em;
+  margin-bottom: 1.5em;
+  object-fit: cover;
+}
+
+.service-card h4 {
+  color: $color-text-3;
+  font-size: $fs-middle-sub;
+  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+  margin: 6px 0 20px;
+}
+
+.service-card .learn-more {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.service-card .learn-more > i {
+  font-size: 1.25em;
+  margin-left: 0.5em;
+  transition: 0.2s ease;
+}
+
+.service-card .learn-more:hover i {
+  margin-left: 1em;
+}
+/* Modal */
+.service-modal {
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: $color-transparent-1;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  display: grid;
+  place-items: center;
+}
+
+.service-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.service-modal-body {
+  position: relative;
+  max-width: 600px;
+  margin-inline: auto;
+  background-color: $color-body-bg;
+  padding: 40px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 35px 0 rgba(0, 0, 0, 0.14);
+  transform: translateY(-50px);
+  transition: all 0.5s ease;
+}
+
+.service-modal.active .service-modal-body {
+  transform: translateY(0);
+}
+
+.service-modal-body img {
+  width: 4.562rem;
+  height: 4.06rem;
+  object-fit: cover;
+}
+
+.service-modal-body .modal-close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 1.24em;
+  cursor: pointer;
+}
+
+.service-modal-body h3 {
+  color: $color-text-3;
+  font-size: $fs-small-tl;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.service-modal-body h4 {
+  color: $color-text-3;
+  font-size: 1.125rem;
+  font-family: 'Quicksand', sans-serif;
+  margin-block: 15px 10px;
+  line-height: 1.4em;
+}

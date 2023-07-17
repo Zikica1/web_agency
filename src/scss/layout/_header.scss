@@ -4,9 +4,11 @@
 
 header {
   position: fixed;
+  z-index: 90;
   width: 100%;
   top: 0;
   left: 0;
+  background-color: $color-body-bg;
   box-shadow: 0 4px 44px 0 rgba(0, 0, 0, 0.14);
   transition: 0.6s ease;
 }
@@ -47,12 +49,12 @@ header .social-icons img:last-child {
 .header-container {
   position: relative;
   max-width: 75em;
-  min-height: calc(4em + 1em);
+  min-height: calc(5em + 1em);
   margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1em 2.1875em;
+  padding: 1em 2em;
   transition: 0.6s ease;
 
   @include sizeMd {
@@ -67,12 +69,12 @@ header .social-icons img:last-child {
 }
 
 header.sticky .header-container {
-  height: calc(3em + 1em);
+  height: calc(4em + 1em);
 }
 
 nav {
   position: fixed;
-  z-index: 100;
+  z-index: 9999;
   top: 0;
   left: 0;
   width: 100%;
@@ -83,7 +85,7 @@ nav {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: 0.3s ease;
+  transition: 0.4s ease;
 
   @include sizeMd {
     position: unset;
@@ -111,7 +113,7 @@ nav.active {
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0px 0px 0px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 20px rgba(0, 217, 217, 0.1);
   padding: 2.5em;
   margin: 1.25em;
   transform: translateY(-50px);
@@ -158,7 +160,8 @@ nav.active .nav-body {
 .nav-body ul a {
   display: inline-block;
   color: $color-text;
-  font-size: 1rem;
+  font-size: 1.25rem;
+  text-transform: uppercase;
   font-family: 'quicksand', sans-serif;
   font-weight: 600;
   margin: 0.94em 3.125em;
@@ -216,7 +219,7 @@ header .btn-primary {
   height: 2px;
   background-color: #333;
   transform: rotate(0);
-  transition: all 0.4s;
+  transition: all 0.25s;
 }
 
 .hamburger .middle {

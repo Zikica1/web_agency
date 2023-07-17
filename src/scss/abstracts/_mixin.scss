@@ -1,5 +1,12 @@
-$middleSize: 48rem;
+$smallSize: 31.25rem;
+$middleSize: 42.5rem;
 $largeSize: 64rem;
+
+@mixin sizeSm {
+  @media (min-width: #{$smallSize}) {
+    @content;
+  }
+}
 
 @mixin sizeMd {
   @media (min-width: #{$middleSize}) {
