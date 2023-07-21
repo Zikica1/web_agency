@@ -40,6 +40,15 @@ window.addEventListener('scroll', () => {
 
 //Observer - hero
 const heroItems = document.querySelectorAll('.load-item');
+const serviceTitle = document.querySelector('.services-left-col h3');
+const serviceDivider = document.querySelector('.services-left-col .divider');
+const serviceBtn = document.querySelector('.services-left-col .btn-primary');
+const serviceCard = document.querySelectorAll('.service-card');
+const missionsTitle = document.querySelector('.missions-right-col h3');
+const missionsDivider = document.querySelector('.missions-right-col .divider');
+const missionsText = document.querySelector('.missions-right-col p');
+const missionsBtn = document.querySelector('.missions-right-col .btn-primary');
+const missionsPic = document.querySelector('.mission-picture img');
 
 const observerHero = new IntersectionObserver(
   (entries) => {
@@ -53,9 +62,34 @@ const observerHero = new IntersectionObserver(
   }
 );
 
-heroItems.forEach((item) => {
+const observerImg = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    entry.target.classList.toggle('animateImg', entry.isIntersecting);
+  });
+});
+
+heroItems.forEach(
+  (item) => {
+    observerHero.observe(item);
+  },
+  {
+    rootMargin: '0px 0 -500px 0px',
+    threshold: 1,
+  }
+);
+
+serviceCard.forEach((item) => {
   observerHero.observe(item);
 });
+
+observerHero.observe(serviceTitle);
+observerHero.observe(serviceDivider);
+observerHero.observe(serviceBtn);
+observerHero.observe(missionsTitle);
+observerHero.observe(missionsDivider);
+observerHero.observe(missionsText);
+observerHero.observe(missionsBtn);
+observerImg.observe(missionsPic);
 
 /* Slider */
 const contents = document.querySelectorAll('.content');
