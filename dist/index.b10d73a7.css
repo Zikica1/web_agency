@@ -1253,4 +1253,102 @@ header .btn-primary {
   transform: scale(1.2)translateZ(-110px);
 }
 
+.statistics {
+  background-color: #f9f9f9;
+  margin-block: 3.125em;
+  padding-block: 3.125em;
+}
+
+.statistics-inner {
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  display: grid;
+}
+
+.statistics-left-col {
+  text-align: center;
+  color: #fff;
+  background: url("stats-img.ba9af3c6.jpg") center / cover no-repeat;
+  border-radius: 10px;
+  place-items: center;
+  padding: 17% 0 32%;
+  display: grid;
+  position: relative;
+  box-shadow: 0 0 20px #00000024;
+}
+
+.statistics-left-col:after {
+  content: "";
+  opacity: .8;
+  background: linear-gradient(269deg, #3498db 0%, #17fdb8 100%);
+  border-radius: 10px;
+  position: absolute;
+  inset: 0;
+}
+
+.statistics-left-col .stats {
+  z-index: 1;
+  position: relative;
+}
+
+.stats-tar-1 span, .stats-tar-2 span {
+  font-family: Quicksand, sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.stats-tar-1 {
+  margin-bottom: 1em;
+}
+
+.stats-tar-1 span {
+  font-size: 5rem;
+}
+
+.stats-tar-1 h4, .stats-tar-2 h4 {
+  color: #f7f7f7;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.stats-tar-2 div {
+  margin-bottom: .25em;
+}
+
+.stats-tar-2 span {
+  font-size: 2.3125rem;
+}
+
+.stats-tar-2 span:nth-of-type(2) {
+  margin-right: -21%;
+}
+
+.statistics-right-col {
+  z-index: 10;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: -17%;
+  padding: 13% 7%;
+  position: relative;
+  box-shadow: 0 0 20px #00000024;
+}
+
+.statistics-right-col h3 {
+  color: #343a40;
+  text-transform: capitalize;
+  margin-bottom: 1em;
+  font-family: Quicksand, sans-serif;
+  font-size: 2rem;
+  line-height: 1.25em;
+}
+
+.statistics-right-col h3 span {
+  color: #3498db;
+}
+
+.statistics-right-col .divider {
+  margin-bottom: 2em;
+}
+
 /*# sourceMappingURL=index.b10d73a7.css.map */
