@@ -49,6 +49,9 @@ const missionsDivider = document.querySelector('.missions-right-col .divider');
 const missionsText = document.querySelector('.missions-right-col p');
 const missionsBtn = document.querySelector('.missions-right-col .btn-primary');
 const missionsPic = document.querySelector('.mission-picture img');
+const statsTitle = document.querySelector('.statistics-right-col h3');
+const statsDivider = document.querySelector('.statistics-right-col .divider');
+const statsText = document.querySelector('.statistics-right-col p');
 
 const observerHero = new IntersectionObserver(
   (entries) => {
@@ -89,6 +92,9 @@ observerHero.observe(missionsTitle);
 observerHero.observe(missionsDivider);
 observerHero.observe(missionsText);
 observerHero.observe(missionsBtn);
+observerHero.observe(statsTitle);
+observerHero.observe(statsDivider);
+observerHero.observe(statsText);
 observerImg.observe(missionsPic);
 
 /* Slider */
@@ -142,21 +148,19 @@ modalClose.forEach((btn) => {
 // Counter
 const counters = document.querySelectorAll('.counter');
 let scrollStarted = false;
+const statsInner = document.querySelector('.statistics-inner');
 
-function scrollPage() {
-  const scrollPos = window.scrollY;
-  console.log(scrollPos);
+const observerStats = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      return;
+    }
 
-  if (scrollPos > 3103 && !scrollStarted) {
     countUp();
-    scrollStarted = true;
-  } else if (scrollPos < 3103 && scrollStarted) {
-    reset();
-    scrollStarted = false;
-  }
-}
+  });
+});
 
-document.addEventListener('scroll', scrollPage);
+observerStats.observe(statsInner);
 
 function countUp() {
   counters.forEach((counter) => {
@@ -177,11 +181,5 @@ function countUp() {
     };
 
     updateCounter();
-  });
-}
-
-function reset() {
-  counters.forEach((counter) => {
-    counter.innerHTML = '0';
   });
 }

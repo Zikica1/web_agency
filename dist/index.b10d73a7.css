@@ -847,8 +847,7 @@ header .btn-primary {
 
 .services {
   background-color: #f9f9f9;
-  margin-block: 3.125em;
-  padding-block: 3.125em;
+  padding-block: 12.5em 6.25em;
 }
 
 @media (width >= 31.25rem) {
@@ -1114,8 +1113,7 @@ header .btn-primary {
 }
 
 .our-missions {
-  margin-block: 50px;
-  padding-block: 50px;
+  padding-block: 6.25em;
 }
 
 @media (width >= 31.25rem) {
@@ -1255,14 +1253,32 @@ header .btn-primary {
 
 .statistics {
   background-color: #f9f9f9;
-  margin-block: 3.125em;
-  padding-block: 3.125em;
+  padding-block: 6.25em;
+}
+
+@media (width >= 31.25rem) {
+  .statistics {
+    padding-inline: 6.25em;
+  }
+}
+
+@media (width >= 64rem) {
+  .statistics {
+    padding-inline: unset;
+  }
 }
 
 .statistics-inner {
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 60% 1fr;
   grid-template-columns: 1fr;
   display: grid;
+}
+
+@media (width >= 64rem) {
+  .statistics-inner {
+    grid-template-rows: repeat(12, 5vw);
+    grid-template-columns: repeat(12, 1fr);
+  }
 }
 
 .statistics-left-col {
@@ -1275,6 +1291,13 @@ header .btn-primary {
   display: grid;
   position: relative;
   box-shadow: 0 0 20px #00000024;
+}
+
+@media (width >= 64rem) {
+  .statistics-left-col {
+    grid-area: 1 / 1 / 12 / 8;
+    justify-content: start;
+  }
 }
 
 .statistics-left-col:after {
@@ -1291,6 +1314,12 @@ header .btn-primary {
   position: relative;
 }
 
+@media (width >= 64rem) {
+  .statistics-left-col .stats {
+    left: 2.5em;
+  }
+}
+
 .stats-tar-1 span, .stats-tar-2 span {
   font-family: Quicksand, sans-serif;
   font-weight: 400;
@@ -1301,8 +1330,24 @@ header .btn-primary {
   margin-bottom: 1em;
 }
 
+@media (width >= 64rem) {
+  .stats-tar-1 {
+    margin-bottom: 2em;
+  }
+}
+
 .stats-tar-1 span {
   font-size: 5rem;
+}
+
+@media (width >= 64rem) {
+  .stats-tar-1 span {
+    font-size: 7rem;
+  }
+
+  .stats-tar-2 span {
+    font-size: 2.8125rem;
+  }
 }
 
 .stats-tar-1 h4, .stats-tar-2 h4 {
@@ -1310,6 +1355,37 @@ header .btn-primary {
   text-transform: uppercase;
   font-size: 1.125rem;
   font-weight: 500;
+}
+
+@media (width >= 64rem) {
+  .stats-tar-1 h4, .stats-tar-2 h4 {
+    opacity: .9;
+    font-size: 1.375rem;
+    font-weight: 400;
+  }
+}
+
+@media (width >= 42.5rem) {
+  .stats-tar-2 {
+    gap: 4em;
+    display: flex;
+  }
+}
+
+@media (width >= 42.5rem) and (width >= 64rem) {
+  .stats-tar-2 {
+    gap: 1em;
+  }
+}
+
+@media (width >= 42.5rem) {
+  .stats-tar-2 .stats-divider {
+    opacity: .5;
+    background-color: #fff;
+    width: 2px;
+    height: min(7vw, 60px);
+    position: relative;
+  }
 }
 
 .stats-tar-2 div {
@@ -1334,13 +1410,35 @@ header .btn-primary {
   box-shadow: 0 0 20px #00000024;
 }
 
+@media (width >= 64rem) {
+  .statistics-right-col {
+    margin-top: unset;
+    grid-area: 2 / 6 / 13 / 13;
+    padding: 133px 118px;
+  }
+}
+
 .statistics-right-col h3 {
   color: #343a40;
   text-transform: capitalize;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
   margin-bottom: 1em;
   font-family: Quicksand, sans-serif;
   font-size: 2rem;
   line-height: 1.25em;
+  transition: all 1.5s ease-out;
+}
+
+@media (width >= 64rem) {
+  .statistics-right-col h3 {
+    font-size: 3.4375rem;
+    font-weight: 600;
+    line-height: 1.14em;
+  }
+}
+
+.statistics-right-col h3.animate {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .statistics-right-col h3 span {
@@ -1348,7 +1446,26 @@ header .btn-primary {
 }
 
 .statistics-right-col .divider {
+  opacity: 0;
   margin-bottom: 2em;
+  transition: all 1s ease-out;
+  transform: translateX(-50px);
+}
+
+.statistics-right-col .divider.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.statistics-right-col p {
+  opacity: 0;
+  transition: all 1s ease-out .3s;
+  transform: translateY(50px);
+}
+
+.statistics-right-col p.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /*# sourceMappingURL=index.b10d73a7.css.map */

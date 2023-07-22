@@ -332,8 +332,7 @@
 /* Services */
 .services {
   background-color: $color-section-bg;
-  margin-block: 3.125em;
-  padding-block: 3.125em;
+  padding-block: 12.5em 6.25em;
 
   @include sizeSm {
     padding-inline: 6.25em;
@@ -611,8 +610,7 @@
 
 /* Our missions */
 .our-missions {
-  margin-block: 50px;
-  padding-block: 50px;
+  padding-block: 6.25em;
 
   @include sizeSm {
     padding-inline: 6.25em;
@@ -743,14 +741,26 @@
 /* statistics */
 .statistics {
   background-color: $color-section-bg;
-  margin-block: 3.125em;
-  padding-block: 3.125em;
+  padding-block: 6.25em;
+
+  @include sizeSm {
+    padding-inline: 6.25em;
+  }
+
+  @include sizeLg {
+    padding-inline: unset;
+  }
 }
 
 .statistics-inner {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 60% 1fr;
+
+  @include sizeLg {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 5vw);
+  }
 }
 
 .statistics-left-col {
@@ -763,6 +773,12 @@
   border-radius: 10px;
   padding: 17% 0 32%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);
+
+  @include sizeLg {
+    grid-column: 1/8;
+    grid-row: 1/12;
+    justify-content: start;
+  }
 }
 
 .statistics-left-col::after {
@@ -777,6 +793,10 @@
 .statistics-left-col .stats {
   position: relative;
   z-index: 1;
+
+  @include sizeLg {
+    left: 2.5em;
+  }
 }
 
 .stats-tar-1 span,
@@ -788,10 +808,24 @@
 
 .stats-tar-1 {
   margin-bottom: 1em;
+
+  @include sizeLg {
+    margin-bottom: 2em;
+  }
 }
 
 .stats-tar-1 span {
   font-size: 5rem;
+
+  @include sizeLg {
+    font-size: 7rem;
+  }
+}
+
+.stats-tar-2 span {
+  @include sizeLg {
+    font-size: $fs-middle-tl;
+  }
 }
 
 .stats-tar-1 h4,
@@ -800,6 +834,33 @@
   font-size: 1.125rem;
   font-weight: 500;
   text-transform: uppercase;
+
+  @include sizeLg {
+    font-size: 1.375rem;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+}
+
+.stats-tar-2 {
+  @include sizeMd {
+    display: flex;
+    gap: 4em;
+
+    @include sizeLg {
+      gap: 1em;
+    }
+  }
+}
+
+.stats-tar-2 .stats-divider {
+  @include sizeMd {
+    position: relative;
+    height: min(7vw, 60px);
+    width: 2px;
+    background-color: #fff;
+    opacity: 0.5;
+  }
 }
 
 .stats-tar-2 div {
@@ -822,6 +883,13 @@
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);
   margin-top: -17%;
+
+  @include sizeLg {
+    grid-column: 6/13;
+    grid-row: 2/13;
+    margin-top: unset;
+    padding: 133px 118px;
+  }
 }
 
 .statistics-right-col h3 {
@@ -831,6 +899,18 @@
   text-transform: capitalize;
   line-height: 1.25em;
   margin-bottom: 1em;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  transition: all 1.5s ease-out;
+
+  @include sizeLg {
+    font-size: $fs-large-tl-2;
+    line-height: 1.14em;
+    font-weight: 600;
+  }
+}
+
+.statistics-right-col h3.animate {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .statistics-right-col h3 span {
@@ -839,4 +919,23 @@
 
 .statistics-right-col .divider {
   margin-bottom: 2em;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s ease-out;
+}
+
+.statistics-right-col .divider.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.statistics-right-col p {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s 0.3s ease-out;
+}
+
+.statistics-right-col p.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
