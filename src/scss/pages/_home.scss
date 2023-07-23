@@ -718,7 +718,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: $color-primary;
+  background: linear-gradient(269deg, $color-primary 0%, $color-tertial 100%);
   opacity: 0.9;
   border-radius: 15px;
 }
@@ -759,7 +759,7 @@
 
   @include sizeLg {
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 5vw);
+    grid-template-rows: repeat(10, 5vw);
   }
 }
 
@@ -776,7 +776,7 @@
 
   @include sizeLg {
     grid-column: 1/8;
-    grid-row: 1/12;
+    grid-row: 1/10;
     justify-content: start;
   }
 }
@@ -886,9 +886,9 @@
 
   @include sizeLg {
     grid-column: 6/13;
-    grid-row: 2/13;
+    grid-row: 2/11;
     margin-top: unset;
-    padding: 133px 118px;
+    padding: 4.375em 7.375em;
   }
 }
 
