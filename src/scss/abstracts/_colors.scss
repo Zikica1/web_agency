@@ -11,8 +11,15 @@ $color-header-con: #444444;
 $color-button-bg: #494949;
 $color-hero-img: #dbdbdb;
 $color-section-bg: #f9f9f9;
+$color-chat-card: #fff;
+$color-card-bg: #fff;
 
 /* Text color */
 $color-text: #444444;
 $color-text-2: #fff;
 $color-text-3: #343a40;
+$color-text-4: #0e0e0e;
+
+/* linear-gradient */
+$gradient-1: linear-gradient(257deg, #0c0c0c 0%, #474747 100%);
+$gradient-2: linear-gradient(269deg, $color-primary 0%, $color-tertial 100%);

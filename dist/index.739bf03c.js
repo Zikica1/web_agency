@@ -593,6 +593,7 @@ const missionsPic = document.querySelector(".mission-picture img");
 const statsTitle = document.querySelector(".statistics-right-col h3");
 const statsDivider = document.querySelector(".statistics-right-col .divider");
 const statsText = document.querySelector(".statistics-right-col p");
+const chatCards = document.querySelectorAll(".chat");
 const observerHero = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
         entry.target.classList.toggle("animate", entry.isIntersecting);
@@ -614,6 +615,9 @@ heroItems.forEach((item)=>{
 });
 serviceCard.forEach((item)=>{
     observerHero.observe(item);
+});
+chatCards.forEach((chat)=>{
+    observerHero.observe(chat);
 });
 observerHero.observe(serviceTitle);
 observerHero.observe(serviceDivider);

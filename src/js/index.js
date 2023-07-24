@@ -20,6 +20,7 @@ const missionsPic = document.querySelector('.mission-picture img');
 const statsTitle = document.querySelector('.statistics-right-col h3');
 const statsDivider = document.querySelector('.statistics-right-col .divider');
 const statsText = document.querySelector('.statistics-right-col p');
+const chatCards = document.querySelectorAll('.chat');
 
 const observerHero = new IntersectionObserver(
   (entries) => {
@@ -51,6 +52,10 @@ heroItems.forEach(
 
 serviceCard.forEach((item) => {
   observerHero.observe(item);
+});
+
+chatCards.forEach((chat) => {
+  observerHero.observe(chat);
 });
 
 observerHero.observe(serviceTitle);
