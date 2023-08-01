@@ -4,14 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="scss/main.scss" />
-    <script
+    <!-- <script
       src="https://kit.fontawesome.com/d9f3a4b889.js"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script type="module" src="js/index.js"></script>
     <title>Document</title>
   </head>
   <body>
+    <!--Light/Dark theme button-->
+    <div class="theme-btn">
+      <i class="fa-regular fa-sun"></i>
+      <i class="fa-solid fa-moon"></i>
+    </div>
+
+    <!--Scroll to top-->
+    <div class="scroll-to-top">
+      <span><i class="fas fa-arrow-up"></i></span>
+    </div>
+
+    <!--Header-->
     <header>
       <div class="contact">
         <div class="phone-number">
@@ -32,10 +51,12 @@
 
         <nav>
           <div class="nav-body">
-            <div class="btn-close"></div>
+            <div class="btn-close">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
             <ul>
-              <li class="active link"><a href="#">Home</a></li>
-              <li class="link"><a href="#">About</a></li>
+              <li class="active link"><a href="index.html">Home</a></li>
+              <li class="link"><a href="about.html">About</a></li>
               <li class="link"><a href="#">Services</a></li>
               <li class="link"><a href="#">Contact</a></li>
             </ul>
@@ -554,7 +575,7 @@
               <div class="chat-card-bottom">
                 <ul>
                   <li>Transforming Ideas into Reality</li>
-                  <li>Powerful Web Solutions</li>
+                  <li>Web Solutions</li>
                   <li>Innovative Web Development</li>
                   <li>Crafting Code and Creativity</li>
                   <li>Driving Digital Growth</li>
@@ -635,7 +656,114 @@
             </div>
           </div>
         </div>
+
+        <button class="btn-primary">
+          <span class="btn-overlay"></span>
+          <span class="btn-text">see all post</span>
+        </button>
       </div>
     </section>
+
+    <!--Footer-->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-inner">
+          <div class="quick-links">
+            <div class="footer-title">
+              <h4>Quick Links</h4>
+              <img src="img/divider-2.svg" alt="" />
+            </div>
+            <ul class="links">
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Terms of use</a></li>
+              <li><a href="#">Privacy Projects</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <div class="footer-title">
+              <h4>contact</h4>
+              <img src="img/divider-2.svg" alt="" />
+            </div>
+            <div class="contact-info">
+              <ul>
+                <li>
+                  Patricia C. Amedee 4401 Waldeck Street Grapevine Nashville, TX
+                  76051
+                </li>
+                <li>
+                  <a href="mailto:webagency@google.com">webagency@gamil.com</a>
+                </li>
+                <li>+88 (0) 2020 0000 777</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-map">
+            <div class="footer-title">
+              <h4>Location on map</h4>
+              <img src="img/divider-2.svg" alt="" />
+            </div>
+
+            <div class="map">
+              <img src="img/footer-img-map.png" alt="" />
+            </div>
+
+            <a
+              class="google-logo"
+              href="https://goo.gl/maps/znizXBZYi9zyPeTr6"
+              target="_blank"
+            >
+              <svg
+                width="40"
+                height="14"
+                viewBox="0 0 40 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <rect width="40" height="13.5556" fill="url(#pattern0)" />
+                <defs>
+                  <pattern
+                    id="pattern0"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use
+                      xlink:href="#image0_1406_2"
+                      transform="scale(0.00555556 0.0163934)"
+                    />
+                  </pattern>
+                  <image
+                    id="image0_1406_2"
+                    width="180"
+                    height="61"
+                    xlink:href="data:image/png;base64,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"
+                  />
+                </defs>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-icons">
+        <p>&copy; 2023 web design</p>
+
+        <ul>
+          <li>
+            <a href="#"><img src="img/facebook-icon.png" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="img/twitter-icon.png" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="img/pinteres-icon.png" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

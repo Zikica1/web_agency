@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"j9r0q":[function(require,module,exports) {
+})({"5xNsm":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "ba60c367739bf03c";
+module.bundle.HMR_BUNDLE_ID = "86be4ae690c04c5e";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -573,134 +573,51 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"ebWYT":[function(require,module,exports) {
+},{}],"hS7Ir":[function(require,module,exports) {
 async function load() {
-    const page = await require("2182b4642506a29c");
+    const page = await require("2dcfbc17d23cd37e");
     page.render();
 }
 load();
-//Observer - hero
-const heroItems = document.querySelectorAll(".load-item");
-const serviceTitle = document.querySelector(".services-left-col h3");
-const serviceDivider = document.querySelector(".services-left-col .divider");
-const serviceBtn = document.querySelector(".services-left-col .btn-primary");
-const serviceCard = document.querySelectorAll(".service-card");
-const missionsTitle = document.querySelector(".missions-right-col h3");
-const missionsDivider = document.querySelector(".missions-right-col .divider");
-const missionsText = document.querySelector(".missions-right-col p");
-const missionsBtn = document.querySelector(".missions-right-col .btn-primary");
-const missionsPic = document.querySelector(".mission-picture img");
-const statsTitle = document.querySelector(".statistics-right-col h3");
-const statsDivider = document.querySelector(".statistics-right-col .divider");
-const statsText = document.querySelector(".statistics-right-col p");
-const chatCards = document.querySelectorAll(".chat");
-const observerHero = new IntersectionObserver((entries)=>{
+//about-observer
+const aboutImg = document.querySelector(".about-right-col .img-right-col");
+const observerAbout = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
-        entry.target.classList.toggle("animate", entry.isIntersecting);
-        if (entry.isIntersecting) observerHero.unobserve(entry.target);
-    });
-}, {
-    rootMargin: "0px 0px -110px 0px"
-});
-const observerImg = new IntersectionObserver((entries)=>{
-    entries.forEach((entry)=>{
-        entry.target.classList.toggle("animateImg", entry.isIntersecting);
+        entry.target.classList.toggle("animation", entry.isIntersecting);
+        if (entry.isIntersecting) observerAbout.unobserve(entry.target);
     });
 });
-heroItems.forEach((item)=>{
-    observerHero.observe(item);
-}, {
-    rootMargin: "0px 0px -500px 0px",
-    threshold: 1
-});
-serviceCard.forEach((item)=>{
-    observerHero.observe(item);
-});
-chatCards.forEach((chat)=>{
-    observerHero.observe(chat);
-});
-observerHero.observe(serviceTitle);
-observerHero.observe(serviceDivider);
-observerHero.observe(serviceBtn);
-observerHero.observe(missionsTitle);
-observerHero.observe(missionsDivider);
-observerHero.observe(missionsText);
-observerHero.observe(missionsBtn);
-observerHero.observe(statsTitle);
-observerHero.observe(statsDivider);
-observerHero.observe(statsText);
-observerImg.observe(missionsPic);
-/* Slider */ const contents = document.querySelectorAll(".content");
-const buttons = document.querySelectorAll(".nav-btn");
-const sliderNav = function(i) {
-    contents.forEach((content)=>{
-        content.classList.remove("active");
-    });
-    buttons.forEach((button)=>{
-        button.classList.remove("active");
-    });
-    contents[i].classList.add("active");
-    buttons[i].classList.add("active");
-};
-buttons.forEach((btn, i)=>{
-    btn.addEventListener("click", ()=>{
-        sliderNav(i);
-    });
-});
-/* Modal services */ const btnLearn = document.querySelectorAll(".learn-more");
-const servicesMod = document.querySelectorAll(".service-modal");
-const modalClose = document.querySelectorAll(".modal-close-btn");
-const portfolioService = function(i) {
-    servicesMod[i].classList.add("active");
-    document.body.style.overflow = "hidden";
-};
-btnLearn.forEach((learn, i)=>{
-    learn.addEventListener("click", ()=>{
-        portfolioService(i);
-    });
-});
-modalClose.forEach((btn)=>{
-    btn.addEventListener("click", ()=>{
-        servicesMod.forEach((modal)=>{
-            modal.classList.remove("active");
-            document.body.style.overflow = "visible";
-        });
-    });
-});
-// Counter
-const counters = document.querySelectorAll(".counter");
-const statsInner = document.querySelector(".statistics-inner");
-const observerStats = new IntersectionObserver((entries)=>{
+observerAbout.observe(aboutImg);
+//Typewriter
+let i = 0;
+const text = "Inspired Web Solutions: Learn About Our";
+const speed = 50;
+const subtitleAbout = document.querySelector("#about-subtitle");
+const observeAbout2 = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
         if (!entry.isIntersecting) return;
-        countUp();
-        observerStats.unobserve(entry.target);
+        typewriter();
+        observeAbout2.unobserve(subtitleAbout);
     });
+}, {
+    rootMargin: "0px 0px -100px 0px"
 });
-observerStats.observe(statsInner);
-function countUp() {
-    counters.forEach((counter)=>{
-        counter.innerText = "0";
-        const updateCounter = ()=>{
-            const target = +counter.getAttribute("data-target");
-            const c = +counter.innerText;
-            const increment = target / 30;
-            if (c < target) {
-                counter.innerText = `${Math.ceil(c + increment)}`;
-                setTimeout(updateCounter, 75);
-            } else counter.innerText = target;
-        };
-        updateCounter();
-    });
+observeAbout2.observe(subtitleAbout);
+function typewriter() {
+    if (i < text.length) {
+        document.querySelector("#about-subtitle").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typewriter, speed);
+    }
 }
 
-},{"2182b4642506a29c":"kTqFQ"}],"kTqFQ":[function(require,module,exports) {
-module.exports = require("333a34b064479e0f")(require("f05d53e69cfee187").getBundleURL("g05j8") + "main.18dbc454.js" + "?" + Date.now()).catch((err)=>{
+},{"2dcfbc17d23cd37e":"aQ24n"}],"aQ24n":[function(require,module,exports) {
+module.exports = require("1b27de4747ba44f2")(require("210e4218f3ab3776").getBundleURL("bzeBA") + "main.18dbc454.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
 }).then(()=>module.bundle.root("1SICI"));
 
-},{"333a34b064479e0f":"61B45","f05d53e69cfee187":"lgJ39"}],"61B45":[function(require,module,exports) {
+},{"1b27de4747ba44f2":"61B45","210e4218f3ab3776":"lgJ39"}],"61B45":[function(require,module,exports) {
 "use strict";
 var cacheLoader = require("ca2a84f7fa4a3bb0");
 module.exports = cacheLoader(function(bundle) {
@@ -797,6 +714,6 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}]},["j9r0q","ebWYT"], "ebWYT", "parcelRequire6975")
+},{}]},["5xNsm","hS7Ir"], "hS7Ir", "parcelRequire6975")
 
-//# sourceMappingURL=index.739bf03c.js.map
+//# sourceMappingURL=about.90c04c5e.js.map

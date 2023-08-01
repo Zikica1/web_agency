@@ -54,7 +54,7 @@
 }
 
 .hero-left-col h1 {
-  color: $color-text-3;
+  color: var(--color-text-3);
   font-size: $fs-middle-tl;
   font-family: 'Quicksand', sans-serif;
   line-height: 1.17em;
@@ -81,7 +81,7 @@
 }
 
 .hero-left-col p {
-  color: $color-text;
+  color: var(--color-text);
   font-size: $fs-small;
   font-family: 'Ubuntu', sans-serif;
   margin-block: 1.142em;
@@ -188,13 +188,17 @@
     right: 32vw;
     height: calc(2.625em);
   }
+
+  @include sizeLg {
+    right: 30vw;
+  }
 }
 
 .hero-shape-li-2 {
   z-index: 11;
   width: 20%;
   height: 2.625em;
-  background-color: $color-body-bg;
+  background-color: var(--color-body-bg);
   border-radius: 30px;
   top: 5.1875em;
   right: 69vw;
@@ -208,6 +212,10 @@
 
   @include sizeMd {
     left: -2vw;
+  }
+
+  @include sizeLg {
+    left: -1.4vw;
   }
 }
 
@@ -231,6 +239,10 @@
 
   @include sizeLg {
     right: 31vw;
+  }
+
+  @include sizeLg {
+    right: 29.5vw;
   }
 }
 
@@ -287,7 +299,7 @@
   width: 2em;
   height: 20%;
   right: 0;
-  top: 40%;
+  top: 45%;
   background-color: $color-primary;
   display: flex;
   flex-direction: column;
@@ -313,12 +325,12 @@
   background: transparent;
   border-radius: 50%;
   cursor: pointer;
-  border: 1px solid $color-body-bg;
+  border: 1px solid $color-card-bg;
   transition: 0.3s ease;
 }
 
 .slider-navigation .nav-btn.active {
-  background: $color-body-bg;
+  background: $color-card-bg;
 }
 
 .slider-navigation .nav-btn:not(:last-child) {
@@ -331,10 +343,14 @@
 
 /* Services */
 .services {
-  background-color: $color-section-bg;
+  background-color: var(--color-section-bg);
   padding-block: 12.5em 6.25em;
 
   @include sizeSm {
+    padding-inline: 3.125em;
+  }
+
+  @include sizeMd {
     padding-inline: 6.25em;
   }
 
@@ -364,7 +380,7 @@
 }
 
 .services-left-col h3 {
-  color: $color-text-3;
+  color: var(--color-text-3);
   font-family: 'Quicksand', sans-serif;
   font-size: $fs-small-tl;
   font-weight: 600;
@@ -427,18 +443,6 @@
   }
 }
 
-// .service-right-inner {
-//   position: relative;
-//   left: 150px;
-//   opacity: 0;
-//   transition: all 1.5s ease-out;
-// }
-
-// .service-right-inner.animate {
-//   opacity: 1;
-//   left: 0;
-// }
-
 .service {
   @include sizeLg {
     display: flex;
@@ -449,7 +453,7 @@
 .service-card {
   position: relative;
   padding: 3.125em;
-  background: $color-body-bg;
+  background: var(--color-card);
   margin-bottom: 3.125em;
   box-shadow: 0 3px 35px 0 rgba(0, 0, 0, 0.14);
   border-bottom: 3px solid $color-primary;
@@ -514,7 +518,7 @@
 }
 
 .service-card h4 {
-  color: $color-text-3;
+  color: var(--color-text-3);
   font-size: $fs-middle-sub;
   font-weight: 600;
   font-family: 'Quicksand', sans-serif;
@@ -526,6 +530,7 @@
 }
 
 .service-card .learn-more {
+  color: var(--color-text-3);
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -567,7 +572,7 @@
   position: relative;
   max-width: 600px;
   margin-inline: auto;
-  background-color: $color-body-bg;
+  background-color: var(--color-body-bg);
   padding: 40px;
   margin: 20px;
   border-radius: 10px;
@@ -595,13 +600,13 @@
 }
 
 .service-modal-body h3 {
-  color: $color-text-3;
+  color: var(--color-text-3);
   font-size: $fs-small-tl;
   font-family: 'Quicksand', sans-serif;
 }
 
 .service-modal-body h4 {
-  color: $color-text-3;
+  color: var(--color-text-3);
   font-size: 1.125rem;
   font-family: 'Quicksand', sans-serif;
   margin-block: 15px 10px;
@@ -613,6 +618,10 @@
   padding-block: 6.25em;
 
   @include sizeSm {
+    padding-inline: 3.125em;
+  }
+
+  @include sizeMd {
     padding-inline: 6.25em;
   }
 
@@ -630,7 +639,7 @@
 }
 
 .missions-right-col h3 {
-  color: $color-text-3;
+  color: var(--color-text-3);
   font-size: $fs-small-tl;
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
@@ -672,7 +681,7 @@
 }
 
 .missions-right-col p {
-  color: #393939;
+  color: var(--color-text);
   margin-block: 3.125em;
   opacity: 0;
   transform: translateY(50px);
@@ -740,10 +749,14 @@
 
 /* statistics */
 .statistics {
-  background-color: $color-section-bg;
+  background-color: var(--color-section-bg);
   padding-block: 6.25em;
 
   @include sizeSm {
+    padding-inline: 3.125em;
+  }
+
+  @include sizeMd {
     padding-inline: 6.25em;
   }
 
@@ -755,7 +768,7 @@
 .statistics-inner {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60% 1fr;
+  // grid-template-rows: 60% 1fr;
 
   @include sizeLg {
     grid-template-columns: repeat(12, 1fr);
@@ -877,7 +890,7 @@
 
 .statistics-right-col {
   position: relative;
-  background-color: $color-body-bg;
+  background-color: var(--color-card);
   z-index: 10;
   padding: 13% 7%;
   border-radius: 10px;
@@ -893,7 +906,7 @@
 }
 
 .statistics-right-col h3 {
-  color: $color-text-3;
+  color: var(--color-text-3);
   font-size: $fs-small-tl;
   font-family: 'Quicksand', sans-serif;
   text-transform: capitalize;
@@ -930,6 +943,7 @@
 }
 
 .statistics-right-col p {
+  color: var(--color-text);
   opacity: 0;
   transform: translateY(50px);
   transition: all 1s 0.3s ease-out;
@@ -942,7 +956,7 @@
 
 /* Live chat */
 .live-chat {
-  padding-block: 6.25em 0;
+  padding-block: 6.25em;
   text-align: center;
 
   @include sizeSm {
@@ -969,7 +983,7 @@
 }
 
 .live-chat-left-col h3 {
-  color: $color-text-3;
+  color: var(--color-text-3);
   font-size: $fs-small-tl;
   font-family: 'Quicksand', sans-serif;
   line-height: 1.2;
@@ -1018,6 +1032,8 @@ ul.live-chat-inner {
 }
 
 .chat-card {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 3em;
   box-shadow: 0 4 40px 0 rgba(0, 0, 0, 0.14);
 
@@ -1050,6 +1066,7 @@ ul.live-chat-inner {
 }
 
 .chat-title p {
+  color: $color-text;
   opacity: 0.8;
   text-transform: capitalize;
 }
@@ -1080,7 +1097,8 @@ ul.live-chat-inner {
 }
 
 .chat-card .chat-card-bottom {
-  background-color: $color-card-bg;
+  flex: 1;
+  background-color: $color-chat-card;
   padding: 3.125em 1.875em;
   text-align: left;
 
@@ -1094,6 +1112,7 @@ ul.live-chat-inner {
 }
 
 .chat-card-bottom ul li {
+  color: $color-text;
   position: relative;
   opacity: 0.8;
   margin-left: 1.5em;
@@ -1131,29 +1150,52 @@ ul.live-chat-inner {
 
 .chat-card-2 {
   @include sizeLg {
-    transition-delay: 0.3s;
+    transition-delay: 0.4s;
   }
 }
 
 .chat-card-3 {
   @include sizeLg {
-    transition-delay: 0.4s;
+    transition-delay: 0.6s;
   }
 }
 
 /* blog */
 .blog {
-  background-color: $color-section-bg;
+  background-color: var(--color-section-bg);
   padding-block: 6.25em;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+
+  @include sizeSm {
+    padding-inline: 3.125em;
+  }
+
+  @include sizeMd {
+    padding-inline: 6.25em;
+  }
+
+  @include sizeLg {
+    padding-inline: unset;
+  }
 }
 
 .blog-content h3 {
-  color: $color-text-3;
+  color: var(--color-text-3);
   font-size: $fs-small-tl;
   font-family: 'Quicksand', sans-serif;
   font-weight: 500;
   line-height: 1.2;
   text-align: center;
+
+  @include sizeMd {
+    font-size: $fs-middle-tl;
+  }
+
+  @include sizeLg {
+    font-size: $fs-large-tl-2;
+  }
 }
 
 .blog-content img {
@@ -1161,13 +1203,29 @@ ul.live-chat-inner {
   margin-block: 2em;
 }
 
+.blog-inner {
+  @include sizeLg {
+    display: flex;
+    gap: 2em;
+  }
+}
+
 .blog-img {
   border-radius: 10px;
+
+  @include sizeLg {
+    height: 15.437em;
+  }
 }
 
 .blog-img img {
   border-radius: 10px;
   transition: transform 0.3s ease-out;
+
+  @include sizeLg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .blog-card:hover .blog-img img {
@@ -1176,15 +1234,12 @@ ul.live-chat-inner {
 .blog-card {
   overflow: hidden;
   border-radius: 10px;
-}
-
-.blog-card:not(:last-child) {
   margin-bottom: 2em;
 }
 
 .blog-text {
   position: relative;
-  background-color: $color-card-bg;
+  background-color: var(--color-card);
   width: 85%;
   min-height: auto;
   padding: 1.56em 2.81em;
@@ -1229,7 +1284,7 @@ ul.live-chat-inner {
 
 .blog-text h4 {
   position: relative;
-  color: $color-text-3;
+  color: var(--color-text-3);
   font-size: 1.44rem;
   font-family: 'Quicksand', sans-serif;
   font-weight: 500;

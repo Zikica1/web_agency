@@ -1,16 +1,17 @@
-/* Main colors */
 $color-primary: #3498db;
 $color-secondary: #343a40;
 $color-tertial: #17fdb8;
 
 /*background colors */
-$color-body-bg: #fff;
 $color-modal-bg: #f4f4f4;
 $color-transparent-1: rgba(0, 0, 0, 0.14);
+$color-bg-transparent-2: rgba(255, 255, 255, 0.1);
+$color-header-bg: #ffffff;
 $color-header-con: #444444;
 $color-button-bg: #494949;
 $color-hero-img: #dbdbdb;
-$color-section-bg: #f9f9f9;
+$color-stats-bg: #ffffff;
+// $color-service-card: #ffffff;
 $color-chat-card: #fff;
 $color-card-bg: #fff;
 
@@ -23,3 +24,36 @@ $color-text-4: #0e0e0e;
 /* linear-gradient */
 $gradient-1: linear-gradient(257deg, #0c0c0c 0%, #474747 100%);
 $gradient-2: linear-gradient(269deg, $color-primary 0%, $color-tertial 100%);
+$gradient-3: linear-gradient(24deg, $color-primary 0%, $color-tertial 100%);
+$gradient-4: linear-gradient(24deg, $color-tertial 0%, $color-primary 100%);
+
+/* Scroll-bar-colors */
+$scroll-bar-color: lightgrey;
+$scroll-thumb-color: hsl(212, 55%, 18%);
+$scroll-thumb-hover-color: #454f6b;
+
+:root {
+  //bg
+  --color-secondary: #{$color-secondary};
+  --color-body-bg: #ffffff;
+  --color-section-bg: #f9f9f9;
+  --color-ham-bg: #333;
+  --color-modal-bg: #f4f4f4;
+  --color-card: #ffffff;
+
+  //text
+  --color-text: #444444;
+  --color-text-3: #343a40;
+}
+
+.dark-theme {
+  // --color-body-bg: #172a4f;
+  --color-secondary: #{$color-primary};
+  --color-body-bg: #0e1b32;
+  --color-ham-bg: #ffffff;
+  --color-section-bg: #0e1b32;
+  --color-modal-bg: #102048;
+  --color-text: #ffffff;
+  --color-text-3: #ffffff;
+  --color-card: #132347;
+}

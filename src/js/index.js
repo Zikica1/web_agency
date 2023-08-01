@@ -45,7 +45,7 @@ heroItems.forEach(
     observerHero.observe(item);
   },
   {
-    rootMargin: '0px 0 -500px 0px',
+    rootMargin: '0px 0px -500px 0px',
     threshold: 1,
   }
 );
