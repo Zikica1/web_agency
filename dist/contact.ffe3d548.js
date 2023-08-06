@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"5xNsm":[function(require,module,exports) {
+})({"9A9wB":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "86be4ae690c04c5e";
+module.bundle.HMR_BUNDLE_ID = "167346a9ffe3d548";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -573,67 +573,20 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"hS7Ir":[function(require,module,exports) {
+},{}],"3C9CX":[function(require,module,exports) {
 async function load() {
-    const page = await require("2dcfbc17d23cd37e");
+    const page = await require("cf68c902bc5eaed3");
     page.render();
 }
 load();
-//about-observer
-const aboutImg = document.querySelector(".about-right-col .img-right-col");
-const aboutDiv = document.querySelector(".about-left-col .about-divider");
-const aboutTex = document.querySelector(".about-text");
-const aboutBtn = document.querySelector(".btn-about-pri");
-const visionTitle = document.querySelector(".vision-title");
-const visionDiv = document.querySelector(".vision-divider");
-const visionCard = document.querySelectorAll(".our-vision-card");
-const observerAbout = new IntersectionObserver((entries)=>{
-    entries.forEach((entry)=>{
-        entry.target.classList.toggle("animation", entry.isIntersecting);
-        if (entry.isIntersecting) observerAbout.unobserve(entry.target);
-    });
-}, {
-    rootMargin: "0px 0px -50px 0px"
-});
-observerAbout.observe(aboutImg);
-observerAbout.observe(aboutDiv);
-observerAbout.observe(aboutTex);
-observerAbout.observe(aboutBtn);
-observerAbout.observe(visionTitle);
-observerAbout.observe(visionDiv);
-visionCard.forEach((card)=>{
-    observerAbout.observe(card);
-});
-//Typewriter
-let i = 0;
-const text = "Inspired Web Solutions: Learn About Our";
-const speed = 50;
-const subtitleAbout = document.querySelector("#about-subtitle");
-const observeAbout2 = new IntersectionObserver((entries)=>{
-    entries.forEach((entry)=>{
-        if (!entry.isIntersecting) return;
-        typewriter();
-        observeAbout2.unobserve(entry.target);
-    });
-}, {
-    rootMargin: "0px 0px -100px 0px"
-});
-observeAbout2.observe(subtitleAbout);
-function typewriter() {
-    if (i < text.length) {
-        document.querySelector("#about-subtitle").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typewriter, speed);
-    }
-}
 
-},{"2dcfbc17d23cd37e":"aQ24n"}],"aQ24n":[function(require,module,exports) {
-module.exports = require("1b27de4747ba44f2")(require("210e4218f3ab3776").getBundleURL("bzeBA") + "main.18dbc454.js" + "?" + Date.now()).catch((err)=>{
+},{"cf68c902bc5eaed3":"8d8ZS"}],"8d8ZS":[function(require,module,exports) {
+module.exports = require("ef96e78f3e117814")(require("a294b173d49b20f0").getBundleURL("1Vv9e") + "main.18dbc454.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
 }).then(()=>module.bundle.root("1SICI"));
 
-},{"1b27de4747ba44f2":"61B45","210e4218f3ab3776":"lgJ39"}],"61B45":[function(require,module,exports) {
+},{"ef96e78f3e117814":"61B45","a294b173d49b20f0":"lgJ39"}],"61B45":[function(require,module,exports) {
 "use strict";
 var cacheLoader = require("ca2a84f7fa4a3bb0");
 module.exports = cacheLoader(function(bundle) {
@@ -730,6 +683,6 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}]},["5xNsm","hS7Ir"], "hS7Ir", "parcelRequire6975")
+},{}]},["9A9wB","3C9CX"], "3C9CX", "parcelRequire6975")
 
-//# sourceMappingURL=about.90c04c5e.js.map
+//# sourceMappingURL=contact.ffe3d548.js.map

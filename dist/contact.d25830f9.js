@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"5xNsm":[function(require,module,exports) {
+})({"hY5Ci":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "86be4ae690c04c5e";
+module.bundle.HMR_BUNDLE_ID = "efd9eee0d25830f9";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -573,163 +573,8 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"hS7Ir":[function(require,module,exports) {
-async function load() {
-    const page = await require("2dcfbc17d23cd37e");
-    page.render();
-}
-load();
-//about-observer
-const aboutImg = document.querySelector(".about-right-col .img-right-col");
-const aboutDiv = document.querySelector(".about-left-col .about-divider");
-const aboutTex = document.querySelector(".about-text");
-const aboutBtn = document.querySelector(".btn-about-pri");
-const visionTitle = document.querySelector(".vision-title");
-const visionDiv = document.querySelector(".vision-divider");
-const visionCard = document.querySelectorAll(".our-vision-card");
-const observerAbout = new IntersectionObserver((entries)=>{
-    entries.forEach((entry)=>{
-        entry.target.classList.toggle("animation", entry.isIntersecting);
-        if (entry.isIntersecting) observerAbout.unobserve(entry.target);
-    });
-}, {
-    rootMargin: "0px 0px -50px 0px"
-});
-observerAbout.observe(aboutImg);
-observerAbout.observe(aboutDiv);
-observerAbout.observe(aboutTex);
-observerAbout.observe(aboutBtn);
-observerAbout.observe(visionTitle);
-observerAbout.observe(visionDiv);
-visionCard.forEach((card)=>{
-    observerAbout.observe(card);
-});
-//Typewriter
-let i = 0;
-const text = "Inspired Web Solutions: Learn About Our";
-const speed = 50;
-const subtitleAbout = document.querySelector("#about-subtitle");
-const observeAbout2 = new IntersectionObserver((entries)=>{
-    entries.forEach((entry)=>{
-        if (!entry.isIntersecting) return;
-        typewriter();
-        observeAbout2.unobserve(entry.target);
-    });
-}, {
-    rootMargin: "0px 0px -100px 0px"
-});
-observeAbout2.observe(subtitleAbout);
-function typewriter() {
-    if (i < text.length) {
-        document.querySelector("#about-subtitle").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typewriter, speed);
-    }
-}
+},{}],"3fKc8":[function(require,module,exports) {
 
-},{"2dcfbc17d23cd37e":"aQ24n"}],"aQ24n":[function(require,module,exports) {
-module.exports = require("1b27de4747ba44f2")(require("210e4218f3ab3776").getBundleURL("bzeBA") + "main.18dbc454.js" + "?" + Date.now()).catch((err)=>{
-    delete module.bundle.cache[module.id];
-    throw err;
-}).then(()=>module.bundle.root("1SICI"));
+},{}]},["hY5Ci","3fKc8"], "3fKc8", "parcelRequire6975")
 
-},{"1b27de4747ba44f2":"61B45","210e4218f3ab3776":"lgJ39"}],"61B45":[function(require,module,exports) {
-"use strict";
-var cacheLoader = require("ca2a84f7fa4a3bb0");
-module.exports = cacheLoader(function(bundle) {
-    return new Promise(function(resolve, reject) {
-        // Don't insert the same script twice (e.g. if it was already in the HTML)
-        var existingScripts = document.getElementsByTagName("script");
-        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
-            return script.src === bundle;
-        })) {
-            resolve();
-            return;
-        }
-        var preloadLink = document.createElement("link");
-        preloadLink.href = bundle;
-        preloadLink.rel = "preload";
-        preloadLink.as = "script";
-        document.head.appendChild(preloadLink);
-        var script = document.createElement("script");
-        script.async = true;
-        script.type = "text/javascript";
-        script.src = bundle;
-        script.onerror = function(e) {
-            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
-            script.onerror = script.onload = null;
-            script.remove();
-            reject(error);
-        };
-        script.onload = function() {
-            script.onerror = script.onload = null;
-            resolve();
-        };
-        document.getElementsByTagName("head")[0].appendChild(script);
-    });
-});
-
-},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
-"use strict";
-var cachedBundles = {};
-var cachedPreloads = {};
-var cachedPrefetches = {};
-function getCache(type) {
-    switch(type){
-        case "preload":
-            return cachedPreloads;
-        case "prefetch":
-            return cachedPrefetches;
-        default:
-            return cachedBundles;
-    }
-}
-module.exports = function(loader, type) {
-    return function(bundle) {
-        var cache = getCache(type);
-        if (cache[bundle]) return cache[bundle];
-        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
-            delete cache[bundle];
-            throw e;
-        });
-    };
-};
-
-},{}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}]},["5xNsm","hS7Ir"], "hS7Ir", "parcelRequire6975")
-
-//# sourceMappingURL=about.90c04c5e.js.map
+//# sourceMappingURL=contact.d25830f9.js.map

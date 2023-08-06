@@ -51,7 +51,7 @@ const observeAbout2 = new IntersectionObserver(
       }
 
       typewriter();
-      observeAbout2.unobserve(subtitleAbout);
+      observeAbout2.unobserve(entry.target);
     });
   },
   {

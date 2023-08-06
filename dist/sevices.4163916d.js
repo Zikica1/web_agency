@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"5xNsm":[function(require,module,exports) {
+})({"4OB7c":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "86be4ae690c04c5e";
+module.bundle.HMR_BUNDLE_ID = "88e8fc894163916d";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -573,67 +573,75 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"hS7Ir":[function(require,module,exports) {
+},{}],"8gwlf":[function(require,module,exports) {
 async function load() {
-    const page = await require("2dcfbc17d23cd37e");
+    const page = await require("db736711e25cd0cf");
     page.render();
 }
 load();
-//about-observer
-const aboutImg = document.querySelector(".about-right-col .img-right-col");
-const aboutDiv = document.querySelector(".about-left-col .about-divider");
-const aboutTex = document.querySelector(".about-text");
-const aboutBtn = document.querySelector(".btn-about-pri");
-const visionTitle = document.querySelector(".vision-title");
-const visionDiv = document.querySelector(".vision-divider");
-const visionCard = document.querySelectorAll(".our-vision-card");
-const observerAbout = new IntersectionObserver((entries)=>{
+//Observer-services
+const serviceImg = document.querySelector(".what-we-do-img");
+const whatWeDoImg = document.querySelector(".what-we-do-left img");
+const whatWeDoPa = document.querySelector(".what-we-do-left p");
+const offerTitle = document.querySelector(".offer-text h3");
+const offerImg = document.querySelector(".offer-text img");
+const offerCards = document.querySelectorAll(".offer-inner-card");
+const teamTitle = document.querySelector("#team-title");
+const teamImg = document.querySelector("#team-img");
+const teamText = document.querySelector("#team-text");
+const teamCards = document.querySelectorAll(".team-card");
+const observerSer = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
         entry.target.classList.toggle("animation", entry.isIntersecting);
-        if (entry.isIntersecting) observerAbout.unobserve(entry.target);
+        if (entry.isIntersecting) observerSer.unobserve(entry.target);
     });
 }, {
     rootMargin: "0px 0px -50px 0px"
 });
-observerAbout.observe(aboutImg);
-observerAbout.observe(aboutDiv);
-observerAbout.observe(aboutTex);
-observerAbout.observe(aboutBtn);
-observerAbout.observe(visionTitle);
-observerAbout.observe(visionDiv);
-visionCard.forEach((card)=>{
-    observerAbout.observe(card);
+observerSer.observe(serviceImg);
+observerSer.observe(whatWeDoImg);
+observerSer.observe(whatWeDoPa);
+observerSer.observe(offerTitle);
+observerSer.observe(offerImg);
+observerSer.observe(teamTitle);
+observerSer.observe(teamImg);
+observerSer.observe(teamText);
+offerCards.forEach((card)=>{
+    observerSer.observe(card);
 });
-//Typewriter
-let i = 0;
-const text = "Inspired Web Solutions: Learn About Our";
-const speed = 50;
-const subtitleAbout = document.querySelector("#about-subtitle");
-const observeAbout2 = new IntersectionObserver((entries)=>{
+teamCards.forEach((card)=>{
+    observerSer.observe(card);
+});
+//typewriter
+const serviceTitle = document.querySelector("#what-we-do-title");
+const serviceObserver2 = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
         if (!entry.isIntersecting) return;
         typewriter();
-        observeAbout2.unobserve(entry.target);
+        serviceObserver2.unobserve(entry.target);
     });
 }, {
     rootMargin: "0px 0px -100px 0px"
 });
-observeAbout2.observe(subtitleAbout);
+serviceObserver2.observe(serviceTitle);
+let i = 0;
+const text = "Who we are &  what we do";
+const speed = 50;
 function typewriter() {
     if (i < text.length) {
-        document.querySelector("#about-subtitle").innerHTML += text.charAt(i);
+        document.querySelector("#what-we-do-title").innerHTML += text.charAt(i);
         i++;
         setTimeout(typewriter, speed);
     }
 }
 
-},{"2dcfbc17d23cd37e":"aQ24n"}],"aQ24n":[function(require,module,exports) {
-module.exports = require("1b27de4747ba44f2")(require("210e4218f3ab3776").getBundleURL("bzeBA") + "main.18dbc454.js" + "?" + Date.now()).catch((err)=>{
+},{"db736711e25cd0cf":"4oOvo"}],"4oOvo":[function(require,module,exports) {
+module.exports = require("d89b2763e6444acc")(require("8718606d831992c9").getBundleURL("bKLH4") + "main.18dbc454.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
 }).then(()=>module.bundle.root("1SICI"));
 
-},{"1b27de4747ba44f2":"61B45","210e4218f3ab3776":"lgJ39"}],"61B45":[function(require,module,exports) {
+},{"d89b2763e6444acc":"61B45","8718606d831992c9":"lgJ39"}],"61B45":[function(require,module,exports) {
 "use strict";
 var cacheLoader = require("ca2a84f7fa4a3bb0");
 module.exports = cacheLoader(function(bundle) {
@@ -730,6 +738,6 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}]},["5xNsm","hS7Ir"], "hS7Ir", "parcelRequire6975")
+},{}]},["4OB7c","8gwlf"], "8gwlf", "parcelRequire6975")
 
-//# sourceMappingURL=about.90c04c5e.js.map
+//# sourceMappingURL=sevices.4163916d.js.map
