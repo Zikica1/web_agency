@@ -103,10 +103,6 @@
 .offer {
   background-color: var(--color-section-bg);
   padding-block: 6.25em;
-
-  // @include sizeSm {
-  //   padding-inline: 3.125em;
-  // }
 }
 
 .offer-text {
@@ -162,77 +158,68 @@
   @include sizeMd {
     grid-template-columns: repeat(2, 1fr);
   }
-
   @include sizeLg {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-.offer-inner-card {
+.scene {
+  perspective: 600px;
+}
+
+.card {
+  width: 100%;
+  height: 24.375em;
   position: relative;
-  background-color: var(--color-card);
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 3px 35px #00000024;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 0.8s;
+  will-change: transform;
+}
+
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25em;
-  padding: 3.43em 1.875em;
-  transition: all 0.3s ease;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color-card);
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.14);
+  padding: 1.25em;
 }
 
-.offer-inner-card:hover {
-  transform: translateY(-24px) scale(0.99);
+.card-face-front {
+  transform: rotateY(0deg);
 }
 
-.offer-inner-card::before {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  background-image: $gradient-3;
-  border-radius: 8px;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.offer-inner-card:hover::before {
-  opacity: 1;
-}
-
-.offer-img {
-  position: relative;
-  z-index: 2;
-}
-
-.offer-img svg {
-  width: 4.312em;
-  height: 4.437em;
-}
-
-.offer-inner-card:hover svg {
-  path {
-    stroke: #fff;
-    fill: #fff;
-  }
-}
-
-.offer-content {
-  position: relative;
-  z-index: 2;
-}
-
-.offer-content h4 {
-  color: var(--color-text-3);
+.card-face-front h4,
+.card-face-back h4 {
+  color: var(--color-text-2);
   font-size: $fs-middle-sub;
-  font-weight: 400;
-  margin-block: 8px 20px;
-  white-space: nowrap;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  margin-block: 1.75em;
 }
 
-.offer-inner-card:hover :is(.offer-content h4, .offer-content p) {
-  color: #fff;
+.card-face-back h4 {
+  margin-block: 0.57em;
+}
+
+.card-face-back p {
+  font-size: $fs-small;
+}
+
+.card-face-back {
+  transform: rotateY(180deg);
 }
 
 /* experts-team */

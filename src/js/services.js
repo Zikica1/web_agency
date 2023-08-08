@@ -11,7 +11,6 @@ const whatWeDoImg = document.querySelector('.what-we-do-left img');
 const whatWeDoPa = document.querySelector('.what-we-do-left p');
 const offerTitle = document.querySelector('.offer-text h3');
 const offerImg = document.querySelector('.offer-text img');
-const offerCards = document.querySelectorAll('.offer-inner-card');
 const teamTitle = document.querySelector('#team-title');
 const teamImg = document.querySelector('#team-img');
 const teamText = document.querySelector('#team-text');
@@ -38,9 +37,9 @@ observerSer.observe(teamTitle);
 observerSer.observe(teamImg);
 observerSer.observe(teamText);
 
-offerCards.forEach((card) => {
-  observerSer.observe(card);
-});
+// offerCards.forEach((card) => {
+//   observerSer.observe(card);
+// });
 
 teamCards.forEach((card) => {
   observerSer.observe(card);
@@ -78,3 +77,14 @@ function typewriter() {
     setTimeout(typewriter, speed);
   }
 }
+
+//card flipped
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach((card) => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('is-flipped');
+    });
+  });
+});
