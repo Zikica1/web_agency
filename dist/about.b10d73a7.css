@@ -404,6 +404,7 @@ header .contact {
 
 header .contact .container {
   justify-content: space-between;
+  padding-inline: 0;
   display: flex;
 }
 
@@ -619,14 +620,6 @@ header .btn-primary {
   transform: translateY(14px);
 }
 
-.hamburger:hover .top {
-  transform: translateY(-2px);
-}
-
-.hamburger:hover .bottom {
-  transform: translateY(16px);
-}
-
 .open .top {
   transform: rotate(45deg)translateY(6px)translateX(6px);
 }
@@ -709,6 +702,7 @@ header .btn-primary {
 .footer-icons .footer-container {
   justify-content: space-between;
   align-items: center;
+  padding-inline: 0;
   display: flex;
 }
 
@@ -720,7 +714,7 @@ header .btn-primary {
 
 .footer-icons ul {
   justify-content: space-between;
-  width: 20%;
+  width: 25%;
   display: flex;
 }
 
@@ -2987,6 +2981,7 @@ ul.live-chat-inner {
   margin-top: 3.125em;
   padding-block: 50px;
   display: grid;
+  overflow-x: hidden;
 }
 
 @media (width >= 42.5rem) {

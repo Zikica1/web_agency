@@ -370,6 +370,7 @@
   border-radius: 20px;
   margin-top: 3.125em;
   padding-block: 50px;
+  overflow-x: hidden;
 
   @include sizeMd {
     grid-template-columns: repeat(2, 1fr);

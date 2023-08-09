@@ -602,16 +602,24 @@ const observerHero = new IntersectionObserver((entries)=>{
 }, {
     rootMargin: "0px 0px -110px 0px"
 });
+const observerHero2 = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        entry.target.classList.toggle("animate", entry.isIntersecting);
+        if (entry.isIntersecting) observerHero2.unobserve(entry.target);
+    });
+}, {
+    threshold: 0.5,
+    rootMargin: "0px 0px -180px 0px"
+});
+heroItems.forEach((item)=>{
+    observerHero2.observe(item);
+});
 const observerImg = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
         entry.target.classList.toggle("animateImg", entry.isIntersecting);
     });
-});
-heroItems.forEach((item)=>{
-    observerHero.observe(item);
 }, {
-    rootMargin: "0px 0px -500px 0px",
-    threshold: 1
+    rootMargin: "0px 0px -100px 0px"
 });
 serviceCard.forEach((item)=>{
     observerHero.observe(item);
