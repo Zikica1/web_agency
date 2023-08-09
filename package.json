@@ -2,7 +2,7 @@
   "name": "web_agency",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "src/index.html",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html"
