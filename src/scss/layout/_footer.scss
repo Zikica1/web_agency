@@ -65,6 +65,9 @@
   color: #ffffff80;
   background: $gradient-1;
   padding: 2.125em 2.187em 2.375em;
+}
+
+.footer-icons .footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -80,6 +83,10 @@
   display: flex;
   width: 20%;
   justify-content: space-between;
+
+  @include sizeLg {
+    width: 10%;
+  }
 }
 
 .footer-icons img {

@@ -103,6 +103,14 @@
 .offer {
   background-color: var(--color-section-bg);
   padding-block: 6.25em;
+
+  @include sizeSm {
+    padding-inline: 3.125em;
+  }
+
+  @include sizeLg {
+    padding-inline: unset;
+  }
 }
 
 .offer-text {
@@ -173,12 +181,43 @@
   position: relative;
   transform-style: preserve-3d;
   transform-origin: center right;
-  transition: transform 0.8s;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: transform 0.8s, opacity 0.8s;
   will-change: transform;
+}
+
+.card.animation {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .card.is-flipped {
   transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card-1 {
+  @include sizeMd {
+    transition: transform 0.8s ease, opacity 0.8s 0.2s ease;
+  }
+}
+
+.card-2 {
+  @include sizeMd {
+    transition: transform 0.8s ease, opacity 0.8s 0.4s ease;
+  }
+}
+
+.card-3 {
+  @include sizeMd {
+    transition: transform 0.8s ease, opacity 0.8s 0.6s ease;
+  }
+}
+
+.card-4 {
+  @include sizeMd {
+    transition: transform 0.8s ease, opacity 0.8s 0.8s ease;
+  }
 }
 
 .card-face {
@@ -195,6 +234,7 @@
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.14);
   padding: 1.25em;
+  cursor: pointer;
 }
 
 .card-face-front {
@@ -207,7 +247,20 @@
   font-size: $fs-middle-sub;
   font-family: 'Quicksand', sans-serif;
   font-weight: 500;
-  margin-block: 1.75em;
+  margin-block: 1.75em 25px;
+}
+
+.card-face-front .see-more {
+  font-size: 1.125rem;
+}
+
+.card-face-front .see-more i {
+  transform: translateX(0.88em);
+  transition: all 0.3s ease;
+}
+
+.card-face-front:hover i {
+  transform: translateX(1.33em);
 }
 
 .card-face-back h4 {

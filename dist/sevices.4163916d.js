@@ -585,10 +585,12 @@ const whatWeDoImg = document.querySelector(".what-we-do-left img");
 const whatWeDoPa = document.querySelector(".what-we-do-left p");
 const offerTitle = document.querySelector(".offer-text h3");
 const offerImg = document.querySelector(".offer-text img");
+const offerCards = document.querySelectorAll(".card");
 const teamTitle = document.querySelector("#team-title");
 const teamImg = document.querySelector("#team-img");
 const teamText = document.querySelector("#team-text");
 const teamCards = document.querySelectorAll(".team-card");
+const serviceCard = document.querySelectorAll(".card");
 const observerSer = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
         entry.target.classList.toggle("animation", entry.isIntersecting);
@@ -605,10 +607,13 @@ observerSer.observe(offerImg);
 observerSer.observe(teamTitle);
 observerSer.observe(teamImg);
 observerSer.observe(teamText);
-// offerCards.forEach((card) => {
-//   observerSer.observe(card);
-// });
+offerCards.forEach((card)=>{
+    observerSer.observe(card);
+});
 teamCards.forEach((card)=>{
+    observerSer.observe(card);
+});
+serviceCard.forEach((card)=>{
     observerSer.observe(card);
 });
 //typewriter

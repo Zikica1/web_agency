@@ -398,10 +398,13 @@ header .contact {
   z-index: 1;
   color: #fff;
   background: linear-gradient(257deg, #0c0c0c 0%, #474747 100%);
-  justify-content: space-between;
   padding: .3125em 2.1875em;
-  display: flex;
   position: relative;
+}
+
+header .contact .container {
+  justify-content: space-between;
+  display: flex;
 }
 
 header .contact :is(.phone-number, .social-icons) {
@@ -616,6 +619,14 @@ header .btn-primary {
   transform: translateY(14px);
 }
 
+.hamburger:hover .top {
+  transform: translateY(-2px);
+}
+
+.hamburger:hover .bottom {
+  transform: translateY(16px);
+}
+
 .open .top {
   transform: rotate(45deg)translateY(6px)translateX(6px);
 }
@@ -692,9 +703,12 @@ header .btn-primary {
 .footer-icons {
   color: #ffffff80;
   background: linear-gradient(257deg, #0c0c0c 0%, #474747 100%);
+  padding: 2.125em 2.187em 2.375em;
+}
+
+.footer-icons .footer-container {
   justify-content: space-between;
   align-items: center;
-  padding: 2.125em 2.187em 2.375em;
   display: flex;
 }
 
@@ -708,6 +722,12 @@ header .btn-primary {
   justify-content: space-between;
   width: 20%;
   display: flex;
+}
+
+@media (width >= 64rem) {
+  .footer-icons ul {
+    width: 10%;
+  }
 }
 
 .footer-icons img {
@@ -2692,6 +2712,18 @@ ul.live-chat-inner {
   padding-block: 6.25em;
 }
 
+@media (width >= 31.25rem) {
+  .offer {
+    padding-inline: 3.125em;
+  }
+}
+
+@media (width >= 64rem) {
+  .offer {
+    padding-inline: unset;
+  }
+}
+
 .offer-text {
   text-align: center;
 }
@@ -2766,21 +2798,47 @@ ul.live-chat-inner {
 .card {
   transform-style: preserve-3d;
   transform-origin: 100%;
+  opacity: 0;
   will-change: transform;
   width: 100%;
   height: 24.375em;
-  transition: transform .8s;
+  transition: transform .8s, opacity .8s;
   position: relative;
+  transform: translateX(100px);
+}
+
+.card.animation {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .card.is-flipped {
   transform: translateX(-100%)rotateY(-180deg);
 }
 
+@media (width >= 42.5rem) {
+  .card-1 {
+    transition: transform .8s, opacity .8s .2s;
+  }
+
+  .card-2 {
+    transition: transform .8s, opacity .8s .4s;
+  }
+
+  .card-3 {
+    transition: transform .8s, opacity .8s .6s;
+  }
+
+  .card-4 {
+    transition: transform .8s, opacity .8s .8s;
+  }
+}
+
 .card-face {
   backface-visibility: hidden;
   text-align: center;
   background-color: var(--color-card);
+  cursor: pointer;
   border-radius: 10px;
   flex-direction: column;
   justify-content: center;
@@ -2799,10 +2857,23 @@ ul.live-chat-inner {
 
 .card-face-front h4, .card-face-back h4 {
   color: var(--color-text-2);
-  margin-block: 1.75em;
+  margin-block: 1.75em 25px;
   font-family: Quicksand, sans-serif;
   font-size: 1.75rem;
   font-weight: 500;
+}
+
+.card-face-front .see-more {
+  font-size: 1.125rem;
+}
+
+.card-face-front .see-more i {
+  transition: all .3s;
+  transform: translateX(.88em);
+}
+
+.card-face-front:hover i {
+  transform: translateX(1.33em);
 }
 
 .card-face-back h4 {

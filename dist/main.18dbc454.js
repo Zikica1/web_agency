@@ -576,38 +576,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 },{}],"1SICI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "render", ()=>render) // const themeBtn = document.querySelector('.theme-btn');
- // const applyDarkTheme = () => {
- //   document.documentElement.classList.add('dark-theme');
- //   themeBtn.classList.add('sun');
- // };
- // const applyLightTheme = () => {
- //   document.documentElement.classList.remove('dark-theme');
- //   themeBtn.classList.remove('sun');
- // };
- // themeBtn.addEventListener('click', () => {
- //   document.documentElement.classList.toggle('dark-theme');
- //   themeBtn.classList.toggle('sun');
- //   const currentTheme = getCurrentTheme();
- //   localStorage.setItem('save-theme', currentTheme);
- //   localStorage.setItem('save-icon', getCurrentIcon(currentTheme));
- // });
- // const getCurrentTheme = () => {
- //   return document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light';
- // };
- // const getCurrentIcon = (theme) => {
- //   return theme === 'dark' ? 'sun' : 'moon';
- // };
- // const savedTheme = localStorage.getItem('save-theme');
- // const savedIcon = localStorage.getItem('save-icon');
- // if (savedTheme) {
- //   if (savedTheme === 'dark') {
- //     applyDarkTheme();
- //   } else {
- //     applyLightTheme();
- //   }
- // }
-;
+parcelHelpers.export(exports, "render", ()=>render);
 function render() {
     //Hamburger and Responsive navigation menu toggle
     const btnHam = document.querySelector(".hamburger");

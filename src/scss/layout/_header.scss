@@ -22,9 +22,12 @@ header .contact {
   z-index: 1;
   color: $color-text-2;
   background: $gradient-1;
+  padding: 0.3125em 2.1875em;
+}
+
+header .contact .container {
   display: flex;
   justify-content: space-between;
-  padding: 0.3125em 2.1875em;
 }
 
 header .contact :is(.phone-number, .social-icons) {
@@ -226,6 +229,14 @@ header .btn-primary {
 
 .hamburger .bottom {
   transform: translateY(14px);
+}
+
+.hamburger:hover .top {
+  transform: translateY(-2px);
+}
+
+.hamburger:hover .bottom {
+  transform: translateY(16px);
 }
 
 .open .top {
