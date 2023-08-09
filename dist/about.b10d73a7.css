@@ -1276,9 +1276,9 @@ header .btn-primary {
 }
 
 .service-card svg {
-  width: 4.312em;
-  height: 4.5em;
   margin-bottom: 1.5em;
+  width: 4.312em !important;
+  height: 4.5em !important;
 }
 
 .service-card:hover svg path {
