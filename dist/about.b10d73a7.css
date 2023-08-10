@@ -398,13 +398,13 @@ header .contact {
   z-index: 1;
   color: #fff;
   background: linear-gradient(257deg, #0c0c0c 0%, #474747 100%);
-  padding: .3125em 2.1875em;
+  padding-block: .3125em;
   position: relative;
 }
 
 header .contact .container {
   justify-content: space-between;
-  padding-inline: 0;
+  align-items: center;
   display: flex;
 }
 
@@ -1276,9 +1276,9 @@ header .btn-primary {
 }
 
 .service-card svg {
+  width: 4.312em;
+  height: 4.5em;
   margin-bottom: 1.5em;
-  width: 4.312em !important;
-  height: 4.5em !important;
 }
 
 .service-card:hover svg path {

@@ -42,8 +42,8 @@ const observerHero2 = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.5,
-    rootMargin: '0px 0px -180px 0px',
+    threshold: 0.2,
+    rootMargin: '0px 0px -40px 0px',
   }
 );
 
@@ -134,16 +134,22 @@ modalClose.forEach((btn) => {
 const counters = document.querySelectorAll('.counter');
 const statsInner = document.querySelector('.statistics-inner');
 
-const observerStats = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      return;
-    }
+const observerStats = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
 
-    countUp();
-    observerStats.unobserve(entry.target);
-  });
-});
+      countUp();
+      observerStats.unobserve(entry.target);
+    });
+  },
+  {
+    threshold: 0.1,
+    rootMargin: '0px 0px -90px 0px',
+  }
+);
 
 observerStats.observe(statsInner);
 

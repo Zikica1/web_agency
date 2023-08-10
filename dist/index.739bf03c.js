@@ -608,8 +608,8 @@ const observerHero2 = new IntersectionObserver((entries)=>{
         if (entry.isIntersecting) observerHero2.unobserve(entry.target);
     });
 }, {
-    threshold: 0.5,
-    rootMargin: "0px 0px -180px 0px"
+    threshold: 0.2,
+    rootMargin: "0px 0px -40px 0px"
 });
 heroItems.forEach((item)=>{
     observerHero2.observe(item);
@@ -684,6 +684,9 @@ const observerStats = new IntersectionObserver((entries)=>{
         countUp();
         observerStats.unobserve(entry.target);
     });
+}, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -90px 0px"
 });
 observerStats.observe(statsInner);
 function countUp() {

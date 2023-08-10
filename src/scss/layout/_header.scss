@@ -22,13 +22,13 @@ header .contact {
   z-index: 1;
   color: $color-text-2;
   background: $gradient-1;
-  padding: 0.3125em 2.1875em;
+  padding-block: 0.3125em;
 }
 
 header .contact .container {
   display: flex;
   justify-content: space-between;
-  padding-inline: 0;
+  align-items: center;
 }
 
 header .contact :is(.phone-number, .social-icons) {
