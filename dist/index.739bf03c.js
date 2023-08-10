@@ -608,8 +608,8 @@ const observerHero2 = new IntersectionObserver((entries)=>{
         if (entry.isIntersecting) observerHero2.unobserve(entry.target);
     });
 }, {
-    threshold: 0.2,
-    rootMargin: "0px 0px -40px 0px"
+    threshold: 0,
+    rootMargin: "0px 0px -20px 0px"
 });
 heroItems.forEach((item)=>{
     observerHero2.observe(item);
