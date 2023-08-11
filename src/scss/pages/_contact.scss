@@ -191,13 +191,13 @@
   transform: translateY(0);
 }
 
-form {
+.contact-form-right form {
   opacity: 0;
   transform: translateY(50px);
   transition: all 1.5s ease;
 }
 
-form.animation {
+.contact-form-right form.animation {
   opacity: 1;
   transform: translateY(0);
 }

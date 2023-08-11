@@ -616,6 +616,7 @@ const observeAbout2 = new IntersectionObserver((entries)=>{
         observeAbout2.unobserve(entry.target);
     });
 }, {
+    threshold: 0.1,
     rootMargin: "0px 0px -100px 0px"
 });
 observeAbout2.observe(subtitleAbout);

@@ -55,6 +55,7 @@ const observeAbout2 = new IntersectionObserver(
     });
   },
   {
+    threshold: 0.1,
     rootMargin: '0px 0px -100px 0px',
   }
 );

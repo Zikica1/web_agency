@@ -3275,13 +3275,13 @@ ul.live-chat-inner {
   transform: translateY(0);
 }
 
-form {
+.contact-form-right form {
   opacity: 0;
   transition: all 1.5s;
   transform: translateY(50px);
 }
 
-form.animation {
+.contact-form-right form.animation {
   opacity: 1;
   transform: translateY(0);
 }
